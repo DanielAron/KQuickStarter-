@@ -205,15 +205,6 @@ This will copy the contents of the `angular-loader.js` library file into the `in
 You can run this every time you update the version of Angular that you are using.
 
 
-## Serving the Application Files
-
-While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-
 ### Running the App during Development
 
 The kona-employees-list project comes preconfigured with a local development webserver.  It is a node.js
@@ -235,20 +226,6 @@ Alternatively, you can choose to configure your own webserver, such as apache or
 configure your server to serve the files under the `app/` directory.
 
 
-### Running the App in Production
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
 
 ## Continuous Integration
 
@@ -262,20 +239,10 @@ tests when you push to GitHub.
 You will need to enable the integration between Travis and GitHub. See the Travis website for more
 instruction on how to do this.
 
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-
 ## Contact
 
 For more information on AngularJS please check out http://angularjs.org/
+FOr more information on KONA Cloud please check out http://konacloud.io
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io
