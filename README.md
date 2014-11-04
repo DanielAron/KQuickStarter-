@@ -5,6 +5,13 @@
 
 This is the first quick starter app between angular.js and kona.
 
+All randomly generated photos are copyrighted under a Creative Commons BY-NC-SA 2.0 license.
+These photos were hand picked from Greg Peverill-Conti's 1,000 faces project.
+
+http://randomuser.me/
+http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en
+http://www.flickr.com/photos/gregpc/
+
 ### Prerequisites
 
 You need git to clone the kona-employees-list repository. You can get git from

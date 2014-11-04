@@ -28,3 +28,7 @@
   content: "";
   padding: 0;
 }
+
+i.fa.fa-chevron-right.pull-right {
+  margin-top: 45px; /*TODO check on mobile*/
+}
