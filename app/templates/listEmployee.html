@@ -1,0 +1,31 @@
+<input type="search" class="form-control app-search" ng-model="filter.value" ng-keypress="search($event)" placeholder="Search.." />
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group">
+
+
+      <div class="list-group-item" ng-repeat="e in employees">
+
+        <a href="#">
+        {{e.name + " " +e.lastName}} <em class="pull-right">{{e.email}}</em>
+
+        <!-- Image Gallery  -->
+        <div class="gallery">
+          <div class="img-wrap">
+            <img ng-src="{{e.photo}}" />
+            <i class="fa fa-chevron-right pull-right"></i>
+          </div>
+
+        </div>
+
+      </a>
+      </div>
+
+      <!--<a ng-repeat="e in employees" href="#" class="list-group-item">-->
+        <!--{{ e.name }} <i class="fa fa-chevron-right pull-right"></i>-->
+      <!--</a>-->
+    </div>
+  </div>
+</div>
+
