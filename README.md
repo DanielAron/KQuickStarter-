@@ -1,31 +1,31 @@
-# KONA Quick Starter Client list
+# KONA Quick Starter Employees list
 
 
 ## Getting Started
 
-
+This is the first quick starter app between angular.js and kona.
 
 ### Prerequisites
 
-You need git to clone the kona-clients-list repository. You can get git from
+You need git to clone the kona-employees-list repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test kona-clients-list. You must have node.js and
+We also use a number of node.js tools to initialize and test kona-employees-list. You must have node.js and
 its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-### Clone kona-clients-list
+### Clone kona-employees-list
 
-Clone the kona-clients-list repository using [git][git]:
+Clone the kona-employees-list repository using [git][git]:
 
 ```
-git clone https://github.com/angular/kona-clients-list.git
-cd kona-clients-list
+git clone https://github.com/angular/kona-employees-list.git
+cd kona-employees-list
 ```
 
-If you just want to start a new project without the kona-clients-list commit history then you can do:
+If you just want to start a new project without the kona-employees-list commit history then you can do:
 
 ```bash
-git clone --depth=1 https://github.com/angular/kona-clients-list.git <your-project-name>
+git clone --depth=1 https://github.com/angular/kona-employees-list.git <your-project-name>
 ```
 
 The `depth=1` tells git to only pull down one commit worth of historical data.
@@ -51,7 +51,7 @@ folders in your project.
 * `app/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
-kona-clients-list changes this location through the `.bowerrc` file.  Putting it in the app folder makes
+kona-employees-list changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
 ### Run the Application
@@ -99,11 +99,11 @@ e2e-tests/            --> end-to-end tests
 
 ## Testing
 
-There are two kinds of tests in the kona-clients-list application: Unit tests and End to End tests.
+There are two kinds of tests in the kona-employees-list application: Unit tests and End to End tests.
 
 ### Running Unit Tests
 
-The kona-clients-list app comes preconfigured with unit tests. These are written in
+The kona-employees-list app comes preconfigured with unit tests. These are written in
 [Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
 configuration file to run them.
 
@@ -132,7 +132,7 @@ npm run test-single-run
 
 ### End to end testing
 
-The kona-clients-list app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
+The kona-employees-list app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
 
@@ -147,7 +147,7 @@ can interact with it.
 npm start
 ```
 
-In addition, since Protractor is built upon WebDriver we need to install this.  The kona-clients-list
+In addition, since Protractor is built upon WebDriver we need to install this.  The kona-employees-list
 project comes with a predefined script to do this:
 
 ```
@@ -169,7 +169,7 @@ development server.
 
 ## Updating Angular
 
-Previously we recommended that you merge in changes to kona-clients-list into your own fork of the project.
+Previously we recommended that you merge in changes to kona-employees-list into your own fork of the project.
 Now that the angular framework library code and tools are acquired through package managers (npm and
 bower) you can use these tools instead to update the dependencies.
 
@@ -192,7 +192,7 @@ This will find the latest versions that match the version ranges specified in th
 
 ## Loading Angular Asynchronously
 
-The kona-clients-list project supports loading the framework and application scripts asynchronously.  The
+The kona-employees-list project supports loading the framework and application scripts asynchronously.  The
 special `index-async.html` is designed to support this style of loading.  For it to work you must
 inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
 do this.
@@ -216,7 +216,7 @@ etc to function properly when an html page is opened via `file://` scheme instea
 
 ### Running the App during Development
 
-The kona-clients-list project comes preconfigured with a local development webserver.  It is a node.js
+The kona-employees-list project comes preconfigured with a local development webserver.  It is a node.js
 tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
 install the tool globally:
 
@@ -255,7 +255,7 @@ reverse-proxying the backend server(s) and webserver(s).
 ### Travis CI
 
 [Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The kona-clients-list
+to your repository and execute scripts such as building the app or running tests. The kona-employees-list
 project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
 tests when you push to GitHub.
 
