@@ -18,7 +18,7 @@ its package manager (npm) installed.  You can get them from [http://nodejs.org/]
 Clone the kona-employees-list repository using [git][git]:
 
 ```
-git clone https://github.com/angular/kona-employees-list.git
+git clone https://github.com/sjcotto/KQuickStarter-
 cd kona-employees-list
 ```
 
