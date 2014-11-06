@@ -9,12 +9,12 @@
         <div ng-include="'templates/employee.html'"></div>
 
         <div bs-panel class="form-actions">
-            <button type="submit" id="btnSignIn" ng-click="alert(1)" class="btn btn-primary"
+            <button type="submit" id="btnSignIn" ng-click="editEmployee()" class="btn btn-primary"
                     data-style="expand-right">
                 Save Employee
             </button>
 
-            <button type="submit" id="btnDelete" ng-click="alert(1)" class="btn btn-danger pull-right"
+            <button type="submit" id="btnDelete" ng-click="deleteEmployee()" ng-confirm-click="Are you really sure?" class="btn btn-danger pull-right"
                     data-style="expand-right">
                 Delete Employee
             </button>

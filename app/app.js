@@ -24,8 +24,6 @@ app.config(function ($routeProvider, $locationProvider) {
         controller: EditController
     });
     $routeProvider.when('/about', {templateUrl: "templates/about.html"});
-
-
 });
 
 /*
