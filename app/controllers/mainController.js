@@ -3,7 +3,7 @@
  */
 
 
-app.controller('MainController', function ($scope, $http, $location) {
+app.controller('MainController', function ($rootScope, $scope, $http, $location) {
 
     $scope.filter = {value: ''}; //init the filter
 
@@ -25,7 +25,7 @@ app.controller('MainController', function ($scope, $http, $location) {
             success(function (data) {
                 console.log("getting data from server ");
                 console.log(data);
-                $scope.employees = data.data;
+                $rootScope.employees = data.data;
             });
     };
 
@@ -34,7 +34,7 @@ app.controller('MainController', function ($scope, $http, $location) {
             success(function (data) {
                 console.log("getting data from server ");
                 console.log(data);
-                $scope.employees = data.data;
+                $rootScope.employees = data.data;
             });
     };
 

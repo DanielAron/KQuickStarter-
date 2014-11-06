@@ -2,7 +2,7 @@
  * Created by santiago on 11/6/14.
  */
 
-function EditController($scope, $route, $http,$location) {
+function EditController($rootScope,$scope, $route, $http, $location, EmployeesContextState) {
     tmpFile = null;
     console.log("id=" + $route.current.params.id);
     var url = URL + "?id=" + $route.current.params.id;
@@ -40,7 +40,7 @@ function EditController($scope, $route, $http,$location) {
                 .error(function (e) {
                     alert(e);
                 });
-        }else {
+        } else {
             saveEmployee(fileUrl);
         }
     };
@@ -53,26 +53,37 @@ function EditController($scope, $route, $http,$location) {
         $http.put(URL, $scope.employee).
             success(function (data, status, headers, config) {
                 console.log("final response")
-                tmpFile=null; //reset thte file
+                tmpFile = null; //reset thte file
                 $scope.employee = {};
                 $location.path("/");
-                location.reload();
+                //location.reload();
+                updateEmployees();
             }).
             error(function (data, status, headers, config) {
                 alert(status);
             });
     }
 
-    $scope.deleteEmployee = function() {
+    $scope.deleteEmployee = function () {
         console.log("deleteEmployee");
         $http.delete(URL + "?id=" + $scope.employee._id).
             success(function (data) {
                 console.log("deleteEmployee response");
                 console.log(data);
-                tmpFile=null; //reset thte file
+                tmpFile = null; //reset thte file
                 $scope.employee = {};
                 $location.path("/");
-                location.reload();
+                //location.reload();
+                updateEmployees();
+            });
+    }
+
+    var updateEmployees = function () {
+        $http.get(URL).
+            success(function (data) {
+                console.log("getting data from server ");
+                console.log(data);
+                $rootScope.employees = data.data;
             });
     }
 }
