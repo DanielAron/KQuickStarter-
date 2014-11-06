@@ -29,6 +29,64 @@
   padding: 0;
 }
 
-i.fa.fa-chevron-right.pull-right {
-  margin-top: 45px; /*TODO check on mobile*/
+.name{
+  height: 70px;
 }
+.header {
+  width: 450px;
+  float: left;
+}
+
+.avatar {
+  float: left;
+  margin-right: 2%;
+}
+
+.status {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.withLove {
+  padding-left: 15px;
+}
+
+input#radioMale {
+  margin-left: 25px;
+}
+input#radioFemale {
+  margin-left: 5px;
+}
+
+a.item-list {
+  color: black !important;
+  text-decoration: none !important;
+}
+
+/*
+  -- Hack to beatu the input file
+*/
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+

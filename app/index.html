@@ -23,16 +23,18 @@
     <link rel="stylesheet" href="app.css">
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
+
 <body ng-app="MobileAngularUiExamples" ng-controller="MainController">
 
-
+<!-- Sidebars -->
+<div ng-include="'templates/sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
 <div class="app">
 
     <!-- Navbars -->
 
     <div class="navbar navbar-app navbar-absolute-top">
         <div class="navbar-brand navbar-brand-center" yield-to="title">
-            <span>Quick Start</span>
+            <span>Employees</span>
         </div>
         <div class="btn-group pull-left">
             <div ng-click="toggle('mainSidebar')" class="btn btn-navbar sidebar-toggle">
@@ -41,8 +43,8 @@
         </div>
 
         <div class="btn-group pull-right" yield-to="navbarAction">
-            <div ng-click="toggle('rightSidebar')" class="btn btn-navbar ng-scope">
-                <i class="fa fa-user"></i> Add New
+            <div class="btn btn-navbar ng-scope" ng-hide="currentPath != '/'">
+               <a href="#/addnew"> <i class="fa fa-user"></i> Add New </a>
             </div>
         </div>
 
@@ -63,6 +65,10 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="app.js"></script>
+<script src="controllers/mainController.js"></script>
+<script src="directives/directives.js"></script>
+<script src="controllers/editController.js"></script>
+
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-touch.min.js"></script>
 <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
 

@@ -1,31 +1,24 @@
-<input type="search" class="form-control app-search" ng-model="filter.value" ng-keypress="search($event)" placeholder="Search.." />
+<input type="search" class="form-control app-search" ng-model="filter.value" ng-keypress="search($event)"
+       placeholder="Search.."/>
 
 <div class="scrollable">
-  <div class="scrollable-content">
-    <div class="list-group">
+    <div class="scrollable-content">
+
+        <div class="list-group-item" ng-repeat="e in employees">
+
+            <a href="#/edit/{{e._id}}" class="item-list">
+            <div class="person">
+                <div class="avatar"><img src="{{e.medium + '?s=150'}}"></div>
 
 
-      <div class="list-group-item" ng-repeat="e in employees">
-
-        <a href="#">
-        {{e.name + " " +e.lastName}} <em class="pull-right">{{e.email}}</em>
-
-        <!-- Image Gallery  -->
-        <div class="gallery">
-          <div class="img-wrap">
-            <img ng-src="{{e.photo}}" />
-            <i class="fa fa-chevron-right pull-right"></i>
-          </div>
-
+                <!--<div class="header">-->
+                    <div class="name"> <h3> {{e.first + ' ' +e.last}} </h3> </div>
+                <!--</div>-->
+                <i class="fa fa-chevron-right pull-right"></i>
+                <div class="clear"></div>
+            </div>
+            </a>
         </div>
-
-      </a>
-      </div>
-
-      <!--<a ng-repeat="e in employees" href="#" class="list-group-item">-->
-        <!--{{ e.name }} <i class="fa fa-chevron-right pull-right"></i>-->
-      <!--</a>-->
     </div>
-  </div>
 </div>
 

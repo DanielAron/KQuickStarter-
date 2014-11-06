@@ -1,0 +1,18 @@
+<div content-for="title">
+    <span>Add Employee</span>
+</div>
+
+
+<div class="scrollable">
+    <div class="scrollable-content section">
+
+        <div ng-include="'templates/employee.html'"></div>
+
+        <div bs-panel class="form-actions">
+            <button type="submit" id="btnSignIn" ng-click="addNewEmployee()" class="btn btn-primary"
+                    data-style="expand-right">
+                Create Employee
+            </button>
+        </div>
+    </div>
+</div>

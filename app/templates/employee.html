@@ -1,0 +1,99 @@
+<div bs-panel title="Basic">
+
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.first"
+            label="First"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="Bart"
+            />
+
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.last"
+            label="Last"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="Simpson"
+            />
+
+    <div class="row">
+        <div class="col-xs-8 col-sm-2">
+            <label>Male </label><input id="radioMale" label="Male" type="radio"
+                                       ng-model="employee.gender"
+                                       name="sex" value="male">
+        </div>
+
+        <div class="col-xs-6 col-sm-2">
+            <label>Female </label> <input id="radioFemale" label-class="col-xs-3 col-sm-2 col-lg-1" label="Female" type="radio"
+                                          ng-model="employee.gender"
+                                          name="sex" value="female"
+                >
+        </div>
+    </div>
+
+</div>
+
+<div bs-panel title="Address">
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.state"
+            label="State"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="Colorado"
+            />
+
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.city"
+            label="City"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="New haven"
+            />
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.street"
+            label="Street"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="1470 Spring St"
+            />
+</div>
+
+<div bs-panel title="Contact info">
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.email"
+            label="Email"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="user@example.com"
+            />
+    <input
+            bs-form-control
+            type="text"
+            ng-model="employee.phone"
+            label="Phone"
+            label-class="col-xs-3 col-sm-2 col-lg-1"
+            class="col-xs-9 col-sm-10 col-lg-11"
+            placeholder="(632)-525-4308"
+            />
+
+
+</div>
+
+<div bs-panel title="Picture">
+            <span class="btn btn-default btn-file">
+                <i class="fa fa-camera"></i> Choose file <input type="file" file-model="myFile " accept="image/*"/>
+            </span>
+    <label> {{myFile.name}} </label>
+</div>

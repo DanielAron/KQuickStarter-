@@ -1,7 +1,10 @@
 'use strict';
 
-var BASE_URL = 'http://localhost:8080/KONAConsole/api/';
-var USER_APP = 'taio/quickstarter/';
+var BASE_URL = 'http://app.konacloud.io/api/';
+var USER_APP = 'santiago/CSV2Backend/';
+var URL = BASE_URL + USER_APP + 'mr_employee';
+var URL_BUCKET = "http://bucket.konacloud.io/external/api/bucket/taio/quickstarter/b1"
+var tmpFile;
 
 var app = angular.module('MobileAngularUiExamples', [
     "ngRoute",
@@ -9,41 +12,31 @@ var app = angular.module('MobileAngularUiExamples', [
     "mobile-angular-ui"
 ]);
 
+/*
+ -- Route provider
+ */
+
 app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/', {templateUrl: "templates/listEmployee.html"})
+    $routeProvider.when('/', {templateUrl: "templates/listemployee.html"});
+    $routeProvider.when('/addnew', {templateUrl: "templates/addemployee.html"});
+    $routeProvider.when('/edit/:id', {
+        templateUrl: "templates/editemployee.html",
+        controller: EditController
+    });
+    $routeProvider.when('/about', {templateUrl: "templates/about.html"});
+
+
 });
 
-app.controller('MainController', function ($scope, $http) {
+/*
+ -- Running, UI Changes on page changes
+ THe button add new at the index has ng-hide = currentPath!=/
+ */
 
-    $scope.filter = {value: ''}; //init the filter
+app.run(['$rootScope', '$location', '$routeParams', function ($rootScope, $location, $routeParams) {
+    $rootScope.$on('$routeChangeSuccess', function (e, current, pre) {
+        $rootScope.currentPath = $location.path();
+    })
+}]);
 
-    $scope.search = function(keyEvent) {
-        if (keyEvent.which === 13) {//enter is pressed
-            var value = $scope.filter.value;
-            if (value == '') {
-                getAllEmployees();
-            } else {
-                getEmployesByNameLike(value);
-            }
-        }
-    }
 
-    var getEmployesByNameLike = function(name) {
-        $http.get(BASE_URL + USER_APP + 'mr_Employee/find?name='+name).
-            success(function (data) {
-                console.log("getting data from server ");
-                console.log(data);
-                $scope.employees = data.data;
-            });
-    }
-
-    var getAllEmployees = function() {
-        $http.get(BASE_URL + USER_APP + 'mr_Employee').
-            success(function (data) {
-                console.log("getting data from server " + data);
-                $scope.employees = data.data;
-            });
-    }
-
-    getAllEmployees(); //call this in in the first time
-});
