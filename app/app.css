@@ -29,8 +29,14 @@
   padding: 0;
 }
 
+img {
+  border-radius: 50%;
+  width: 90px;
+}
+
 .name{
   height: 70px;
+  padding-top: 10px;
 }
 .header {
   width: 450px;
@@ -54,12 +60,12 @@
   padding-left: 15px;
 }
 
-input#radioMale {
-  margin-left: 25px;
-}
-input#radioFemale {
-  margin-left: 5px;
-}
+/*input#radioMale {*/
+  /*margin-left: 25px;*/
+/*}*/
+/*input#radioFemale {*/
+  /*margin-left: 5px;*/
+/*}*/
 
 a.item-list {
   color: black !important;
