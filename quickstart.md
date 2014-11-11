@@ -17,21 +17,21 @@ We have one model named 'Employee' with these atributes
 
 ```js
 {
-  "gender" : "some String" ,
-  "title" : "some String" ,
-  "first" : "some String" ,
-  "last" : "some String" ,
-  "street" : "some String" ,
-  "city" : "some String" ,
-  "state" : "some String" ,
-  "zip" : "some String" ,
-  "email" : "some String" , 
-  "username" : "some String" ,
-  "phone" : "some String" ,
-  "cell" : "some String" ,
-  "SSN" : "some String" ,
-  "large" : "some String" ,
-  "medium" : "some String"
+  "gender" : "" ,
+  "title" : "" ,
+  "first" : "" ,
+  "last" : "" ,
+  "street" : "" ,
+  "city" : "" ,
+  "state" : "" ,
+  "zip" : "" ,
+  "email" : "" , 
+  "username" : "" ,
+  "phone" : "" ,
+  "cell" : "" ,
+  "SSN" : "" ,
+  "large" : "" ,
+  "medium" : ""
 }
 ```
 
