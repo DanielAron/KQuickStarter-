@@ -91,7 +91,7 @@ If you fork the project or use it in the website (inside of KONA)
 
 We asume that do you know Angualar, if not just go and learn :)
 
-### GET Employee (list all employees)
+### GET Employees (list all employees)
 
 The Angular template looks like these
 
@@ -121,6 +121,49 @@ var getAllEmployees = function () {
                 }
             });
     };
+```
+
+### POST one Employee
+
+Using the other API automaticaly created we want to create a new employee
+
+first of all, the Employee have a profile picture, so we can upload the image to a bucket and then call the POST method to create the Employee.
+
+#### Upload a file
+
+for these we create one directive ```fileModel```
+
+and use it like these
+
+```html
+<span class="btn btn-default btn-file">
+  <i class="fa fa-camera"></i> Choose file <input type="file" file-model="myFile " accept="image/*"/>
+</span>
+```
+
+Posting the image and posting the Employee on the result
+
+```js
+ $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined} //for the multipart boundary (the browser need it)
+        })
+          .success(function (data) {
+              var url = data.data[0].url;
+              $scope.employee.medium = url;
+              
+              $http.post(URL, $scope.employee).
+                success(function (data, status, headers, config) {
+                      $scope.employee = {};
+                      $location.path("/");
+                }).
+                error(function (data, status, headers, config) {
+                      alert(status);
+                });
+          })
+          .error(function (e) {
+              alert(e);
+          });
 ```
 
 The rest of the code it's similar to these
