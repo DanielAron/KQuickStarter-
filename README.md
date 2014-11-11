@@ -1,7 +1,15 @@
 # KONA Quick Starter Employees list
 
 
-## Getting Started
+
+
+#Using KQuickStarter
+
+![Running](http://i.imgur.com/PFGyhdf.gif)
+
+
+
+## Getting Started offline
 
 This is the first quick starter app between angular.js and kona.
 
