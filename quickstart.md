@@ -35,3 +35,29 @@ We have one model named 'Employee' with these atributes
 }
 ```
 
+Now, we hace the CRUD operarions that KONA has created, we now want to have a filter
+
+```js
+var find = function(req) {
+    var name = req.params.get("name");
+    var find  = [
+        {
+            first : {
+                $regex : ".*" + name + ".*",
+                $options: 'i'
+            }    
+        },
+        {
+            last : {
+                $regex : ".*" + name + ".*",
+                $options: 'i'
+            }    
+        }
+    ];
+    var obj = {
+        $or : find
+    }
+    return model.buildQuery().find(toJson(obj)).list();
+    
+}
+```
