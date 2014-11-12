@@ -183,14 +183,6 @@ git clone https://github.com/sjcotto/KQuickStarter-
 cd kona-employees-list
 ```
 
-If you just want to start a new project without the kona-employees-list commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/kona-employees-list.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
 ### Install Dependencies
 
 We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
@@ -226,8 +218,6 @@ npm start
 
 Now browse to the app at `http://localhost:8000/app/index.html`.
 
-
-
 ## Directory Layout
 
 ```
@@ -242,44 +232,6 @@ app/                    --> all of the source files for the application
   index-async.html      --> just like index.html, but loads js files asynchronously
 karma.conf.js         --> config file for running unit tests with Karma
 ```
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to kona-employees-list into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
-
-
-## Loading Angular Asynchronously
-
-The kona-employees-list project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
-
 
 ### Running the App during Development
 
@@ -300,18 +252,3 @@ http-server -a localhost -p 8000
 
 Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
 configure your server to serve the files under the `app/` directory.
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
-FOr more information on KONA Cloud please check out http://konacloud.io
-
-[git]: http://git-scm.com/
-[bower]: http://bower.io
-[npm]: https://www.npmjs.org/
-[node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
-[travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server
