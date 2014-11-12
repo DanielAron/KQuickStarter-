@@ -12,7 +12,8 @@ This app is one of the KONA Starter tempates, as you can see in the demo it is a
 All the info come from the
 
 RANDOM USER GENERATOR (http://randomuser.me/)
-A free API for generating random user data. Like Lorem Ipsum, but for people.
+
+-- A free API for generating random user data. Like Lorem Ipsum, but for people.
 
 
 ## How to build the backend
@@ -48,7 +49,7 @@ The client send us the text to search by a param in the URL, so we get it with
 ```var name = req.params.get(“name”);```
 
 And finally we build the object to do the query, with the MongoDB format.
-We have an or for each attribute, and a regex in each case (with .* + name + .*).
+We have an or for each attribute, and a regex in each case (with ```.* + name + .*```).
 With the ```$regex : “.*” + name + “.*”``` the function match anything that contains our name.
 
 
@@ -79,7 +80,7 @@ var find = function(req) {
 
 and we can use this api like these
 
-![Filter_Example](https://konaproject.files.wordpress.com/2014/11/screen-shot-2014-11-07-at-12-48-43.png?w=1314&h=774)
+![Filter_Example](http://i.imgur.com/8iKL6hk.png)
 
 That's all
 
