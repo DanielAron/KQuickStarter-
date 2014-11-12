@@ -182,6 +182,14 @@ Clone the kona-employees-list repository using [git][git]:
 git clone https://github.com/sjcotto/KQuickStarter-
 cd kona-employees-list
 ```
+### Configuration
+
+Change the file
+*app/app.js**
+
+```var USER_APP = 'user/app/';```
+
+for your user and your app names
 
 ### Install Dependencies
 
