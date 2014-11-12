@@ -7,13 +7,11 @@
 
 ## Intro
 
-This app is one of the KONA Starter tempates, as you can see in the demo it is a list of employee and the crud operarions.
-
+This app is one of the KONA starter templates, as you can see in the demo it is a list of employee and the crud operations.
 All the info come from the
 
 RANDOM USER GENERATOR (http://randomuser.me/)
-
--- A free API for generating random user data. Like Lorem Ipsum, but for people.
+A free API for generating random user data. Like Lorem Ipsum, but for people.
 
 
 ## How to build the backend
@@ -38,9 +36,8 @@ We have only one model named 'Employee' with these atributes
 }
 ```
 
-Now, we hace the CRUD operarions that KONA has created, we now want to have a filter like in the demo
-
-The Employee has 2 atributes 'first' and 'last' and we want to search in the two of them and the search must be like the sql ‘like’.
+Now, we have the CRUD operations that KONA has created, we now want to have a filter like in the demo
+The Employee has 2 attributes 'first' and 'last' and we want to search in the two of them and the search must be like the sql ‘like’.
 First we open the connection with our model (employee).
 
 ```var model = kona.model.open(‘employee’);```
@@ -78,7 +75,7 @@ var find = function(req) {
 }
 ```
 
-and we can use this api like these
+and we can use this api like
 
 ![Filter_Example](http://i.imgur.com/8iKL6hk.png)
 
@@ -87,10 +84,9 @@ That's all
 ## How to Build the client
 
 For this example we choose angular, because it's Awesome :)
+If you fork the project (https://github.com/sjcotto/KQuickStarter-) or use it in the website (inside of KONA)
 
-If you fork the project or use it in the website (inside of KONA)
-
-We asume that do you know Angualar, if not just go and learn :)
+We asume that do you know Angualar,
 
 ### GET Employees (list all employees)
 
@@ -108,7 +104,7 @@ The Angular template looks like these
 </div>
 ```
 
-Just iterate inside the list employees in the scope, the list employee came from the GET API
+Just iterate inside the list employees in the scope, the employee list came from the GET API
 
 file controller/mainController.js
 ```js
@@ -126,15 +122,13 @@ var getAllEmployees = function () {
 
 ### POST one Employee
 
-Using the other API automaticaly created we want to create a new employee
-
-first of all, the Employee have a profile picture, so we can upload the image to a bucket and then call the POST method to create the Employee.
+Using the other API automatically created we want to create a new employee.
+First of all, the employee have a profile picture, so we must upload the image to a bucket and then call the POST method to create the Employee.
 
 #### Upload a file
 
-for these we create one directive ```fileModel```
-
-and use it like these
+for this we create one directive ```fileModel```
+and from the template looks like this
 
 ```html
 <span class="btn btn-default btn-file">
@@ -142,7 +136,7 @@ and use it like these
 </span>
 ```
 
-Posting the image and posting the Employee on the result
+Controller
 
 ```js
  $http.post(uploadUrl, fd, {
@@ -167,4 +161,4 @@ Posting the image and posting the Employee on the result
           });
 ```
 
-The rest of the code it's similar to these
+The rest of the code it is similar to these examples
