@@ -185,7 +185,7 @@ cd kona-employees-list
 ### Configuration
 
 Change the file
-*app/app.js**
+**app/app.js**
 
 ```var USER_APP = 'user/app/';```
 
