@@ -1,7 +1,7 @@
 'use strict';
 
 var BASE_URL = 'http://app.konacloud.io/api/';
-var USER_APP = 'santiago/CSV2Backend/';
+var USER_APP = 'user/app/';
 var URL = BASE_URL + USER_APP + 'mr_employee';
 var URL_BUCKET = "http://bucket.konacloud.io/external/api/bucket/taio/quickstarter/b1"
 var tmpFile;
