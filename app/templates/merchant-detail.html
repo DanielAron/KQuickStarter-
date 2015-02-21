@@ -1,0 +1,47 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="{{ merchant.name }}">
+    <ion-content has-header="true">
+        <div class="list card" ng-repeat="anImage in merchant.imgs">
+            <div class="item item-body">
+                <a href="{{ merchant.defaultLink }}">                
+<!--
+                    <img 
+                        class="lazy full-image" 
+                        ng-src='./img/circle.gif' 
+                        data-original="https://s3.amazonaws.com/modaytendencia/merchant/{{ merchant.folder_name }}/{{ anImage }}.jpg"
+                    >
+-->
+                    
+                    <img 
+                        class="full-image" 
+                        src="https://s3.amazonaws.com/modaytendencia/merchant/{{ merchant.folder_name }}/{{ anImage }}.jpg"
+                    >
+                    
+                </a>
+            </div>
+        </div>
+        <!-- SHOW SOCIAL MEDIA LINKS -->
+        <div data-ng-show="merchant.facebook">
+            <a class="item item-icon-left nav-clear menu-close" href="{{ merchant.facebook }}"><i class="icon ion-social-facebook"></i></a>
+        </div>
+        <div data-ng-show="merchant.pinterest">
+            <a class="item item-icon-left nav-clear menu-close" href="{{ merchant.pinterest }}"><i class="icon ion-social-pinterest"></i></a>
+        </div>
+        <div data-ng-show="merchant.instagram">
+            <a class="item item-icon-left nav-clear menu-close" href="{{ merchant.instagram }}"><i class="icon ion-social-instagram"></i></a>
+        </div>    
+        <div data-ng-show="merchant.twitter">
+            <a class="item item-icon-left nav-clear menu-close" href="{{ merchant.twitter }}"><i class="icon ion-social-twitter"></i></a>
+        </div>
+        <div data-ng-show="merchant.oficial_site">
+            <a class="item item-icon-left nav-clear menu-close" href="{{ merchant.oficial_site }}"><i class="icon ion-android-earth"></i></a>
+        </div>
+        <!-- GO TO MAP and show STORES location-->
+        <!-- <a class="item item-icon-left nav-clear menu-close" href="#/app/map"><i class="icon ion-android-location"></i></a>-->
+    </ion-content>
+</ion-view>

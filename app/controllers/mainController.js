@@ -1,8 +1,6 @@
 /**
  * Created by santiago on 11/6/14.
  */
-
-
 app.controller('MainController', function ($rootScope, $scope, $http, $location) {
 
     $scope.filter = {value: ''}; //init the filter
@@ -19,7 +17,7 @@ app.controller('MainController', function ($rootScope, $scope, $http, $location)
     };
 
     var getEmployesByNameLike = function (name) {
-        var url = URL + '/find?name=' + name;
+        var url = URL_ANGULAR + '/find?name=' + name;
         console.log('url to find ' + url);
         $http.get(url).
             success(function (data) {
@@ -30,7 +28,7 @@ app.controller('MainController', function ($rootScope, $scope, $http, $location)
     };
 
     var getAllEmployees = function () {
-        $http.get(URL).
+        $http.get(URL_ANGULAR).
             success(function (data) {
                 console.log("getting data from server ");
                 console.log(data);
@@ -47,7 +45,6 @@ app.controller('MainController', function ($rootScope, $scope, $http, $location)
             alert("Please, choose a image");
             return;
         }
-
         var file = tmpFile;
         var uploadUrl = URL_BUCKET;
         var fd = new FormData();
@@ -57,7 +54,6 @@ app.controller('MainController', function ($rootScope, $scope, $http, $location)
             headers: {'Content-Type': undefined}
         })
             .success(function (data) {
-
                 if (data.data.length == 0) {
                     alert("some error posting image :(");
                     return;
@@ -66,8 +62,8 @@ app.controller('MainController', function ($rootScope, $scope, $http, $location)
                 //now we call the service, posting the employee
                 $scope.employee.medium = url;
                 console.log($scope.employee);
-                console.log(URL);
-                $http.post(URL, $scope.employee).
+                console.log(URL_ANGULAR);
+                $http.post(URL_ANGULAR, $scope.employee).
                     success(function (data, status, headers, config) {
                         console.log("final response")
                         getAllEmployees();

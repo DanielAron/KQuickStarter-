@@ -1,0 +1,41 @@
+<!--
+TODO: 
+buscar por categorias ademas de nombres
+ya esta echo el metodo en KONA... USARLO! TODO... 
+-->
+<ion-view title="Search">
+      <ion-nav-buttons side="left">
+    <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+    <ion-content>
+        <!-- SEARCH BAR -->
+        <div>
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <!--<input type="text" placeholder="Search">-->
+                <input type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
+            </label>
+            <!--
+            <button ng-click="cleanSearch()" class="button button-clear">
+                Clear
+            </button>      
+            -->
+        </div>
+        <!-- If not results for the search show message -->
+        <div data-ng-show="!data.merchants.length">
+            <div data-ng-show="data.search.length"> <!-- mmmm esto no tiene sentido REVISAR a ver que quise hacer! -->
+               <div> No hay resultados para la busqueda </div>
+            </div>
+        </div>
+        <!-- SEARCH RESULTS -->
+        <!-- 1 COLUMN LIST -->
+        <div class="list card" data-ng-repeat="m in data.merchants">
+            <div class="item item-body">
+                <a href="#/app/merchant/{{ m._id }}"> 
+                    <img class="full-image" src="https://s3.amazonaws.com/modaytendencia/merchant/{{ m.folder_name }}/p.jpg">
+                </a>
+                <p>{{ m.name }}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

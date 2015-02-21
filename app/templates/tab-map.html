@@ -1,0 +1,28 @@
+<ion-view title="PROMOS">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ui-gmap-google-map  center='map.center' zoom='map.zoom'>
+            <!-- ref: https://angular-ui.github.io/angular-google-maps/#!/api -->
+            <!-- ref: http://stackoverflow.com/questions/26618612/ui-gmap-markers-is-not-working -->
+            <!-- <ui-gmap-markers models="stores" coords="'self'" icon="'icon'" idKey="'_id'" click="'onClick'"></ui-gmap-markers>-->
+            <ui-gmap-markers models="stores" coords="'self'" icon="'icon'" idKey="'_id'" click="'onClick'"></ui-gmap-markers>
+        </ui-gmap-google-map>      
+    </ion-content>
+</ion-view>
+
+
+
+
+<!------------------------------------------------------------>
+<!--
+<ion-view title="MAPA">
+  <ion-content>
+    <div id="map" data-tap-disabled="true"></div>
+  </ion-content>
+    <ion-footer-bar class="bar-dark">
+      <a ng-click="centerOnMe()" class="button button-icon icon ion-navigate">Find Me</a>
+    </ion-footer-bar>
+</ion-view>
+-->

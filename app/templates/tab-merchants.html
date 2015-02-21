@@ -1,0 +1,57 @@
+<!--
+TODO: 
+agregar filtro de merchants por categor'ia
+-->
+<ion-view title=" ">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <!-- EN CASO DE NO ENCONTRAR INFO en el server-->
+        <!--
+        <div data-ng-show="!merchants.length">
+            <h3>No hay Marcas para mostrar, verifique su conexión</h3>
+        </div>  
+        -->
+        <!-- 1 COLUMN LIST -->
+        <div class="list card" data-ng-repeat="m in merchants">
+            <div class="item item-body">
+                <a href="#/app/merchant/{{ m._id }}">
+<!--
+PASOS:
+1- armar imagen sin src con el tama;o
+2- pedir por ajax la imagen
+3- Efecto "fade in" que queda cool 
+4- paginado
+-->                    
+                        <!--
+                        Sin lazy load ni infinit scroll
+                        <img 
+                            class="full-image" 
+                            src='https://s3.amazonaws.com/modaytendencia/merchant/{{ m.folder_name }}/p.jpg'
+                        >
+                        -->
+                        <!-- Implementación con ngInfiniteScroll. ref: http://binarymuse.github.io/ngInfiniteScroll/ -->
+                        <img
+                            class="lazy full-image" 
+                            ng-src='./img/circle.gif' 
+                            data-original="https://s3.amazonaws.com/modaytendencia/merchant/{{ m.folder_name }}/p.jpg"
+                        >
+                        <!-- Implementación con angular lazy load. 
+                             ref: http://www.bennadel.com/blog/2498-lazy-loading-image-with-angularjs.htm 
+                             La directiva está en: js/sevices/directive2.js -->
+                        <!-- 
+                        <img 
+                            bn-lazy-src='https://s3.amazonaws.com/modaytendencia/merchant/{{ m.folder_name }}/p.jpg'
+                            width="150"
+                            height="150"
+                        >
+                        -->
+                </a>
+                <p>{{ m.name }} \ {{ m.country }}</p>
+            </div>
+        </div>
+                
+  </ion-content>
+</ion-view>
+   

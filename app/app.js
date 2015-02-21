@@ -1,10 +1,25 @@
 'use strict';
 
-var BASE_URL = 'http://app.konacloud.io/api/';
-var USER_APP = 'user/app/';
-var URL = BASE_URL + USER_APP + 'mr_employee';
-var URL_BUCKET = "http://bucket.konacloud.io/external/api/bucket/taio/quickstarter/b1"
+var BASE_URL = 'https://app.konacloud.io/api/';
+
+//TestAngularAPP URLs
+var USER_APP_ANGULAR = 'daniel/TestAngularTemp/';
+var URL_ANGULAR = BASE_URL + USER_APP_ANGULAR + 'mr_Employee';
+
+var URL_BUCKET = "https://bucket.konacloud.io/external/api/bucket/daniel/TestAngularTemp/images"
 var tmpFile;
+
+
+//Moda URLs
+var USER_APP_MODA = 'daniel/moda/';
+
+var USER_URL_MODA = BASE_URL + USER_APP_MODA + 'mr_User';
+var MERCHANT_URL = BASE_URL + USER_APP_MODA + 'mr_Merchant';
+var MERCHANT_URL_WithDefaultLink = BASE_URL + USER_APP_MODA + 'mr_Merchant/getWithDefaultLink';
+var STORE_URL = BASE_URL + USER_APP_MODA + 'mr_Store';
+var STYLE_URL = BASE_URL + USER_APP_MODA + 'mr_Style';
+
+
 
 var app = angular.module('MobileAngularUiExamples', [
     "ngRoute",
@@ -17,7 +32,8 @@ var app = angular.module('MobileAngularUiExamples', [
  */
 
 app.config(function ($routeProvider, $locationProvider) {
-    $routeProvider.when('/', {templateUrl: "templates/listemployee.html"});
+    $routeProvider.when('/', {templateUrl: "templates/listMerchants.html"});
+//    $routeProvider.when('/', {templateUrl: "templates/listemployee.html"});
     $routeProvider.when('/addnew', {templateUrl: "templates/addemployee.html"});
     $routeProvider.when('/edit/:id', {
         templateUrl: "templates/editemployee.html",

@@ -1,0 +1,39 @@
+        <!-- SEARCH BAR -->
+        <ion-header-bar class="item-input-inset">
+        <!-- <ion-header-bar class="bar-subheader"> --> <!-- Search bar as a subheader -->
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
+            </label>
+            <button ng-click="cleanSearch()" class="button button-clear">
+                Cancel
+            </button>
+        </ion-header-bar>
+
+   <ion-content>
+    <button ng-click=scanBarcode() class="button button-block button-stable">
+        COMPRAR
+    </button>
+    <!-- Pull to Refresh -->
+    <!--
+    <ion-refresher on-refresh="refresh()"></ion-refresher>
+    <div data-ng-show="!merchants.length">
+       <br><br>
+       <center>
+           <h1>Pull to Refresh</h1>
+       </center>
+    </div>
+    -->
+    <!-- SEARCH RESULTS -->
+    <div data-ng-show="data.merchants.length">
+           Resultado de busqueda:
+    </div>
+    <!-- <!-- 1 COLUMN LIST -->
+    <div class="list card" data-ng-repeat="m in data.merchants">
+       <div class="item item-body">
+           <img class="full-image" src='https://s3.amazonaws.com/modaytendencia/merchant/{{ m.name }}/p.jpg'>
+            <div data-ng-bind-html="m.content"></div>
+            <p>{{ m.name }}</p>
+       </div>
+    </div>
+</ion-content>
